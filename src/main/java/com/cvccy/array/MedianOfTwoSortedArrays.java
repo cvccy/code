@@ -22,7 +22,6 @@ public class MedianOfTwoSortedArrays {
         System.out.println(median.solution.findMedianSortedArrays(nums1, nums2));
 
     }
-
 }
 
 
@@ -56,16 +55,18 @@ class MergeBeforMedian implements Solution {
                 return nums1[(len >> 1) + 1];
             }
         }
-        while (merge.length < len) {
+        while (k != len) {
             if (i == nums1Length) {
                 while (j != nums2Length) {
                     merge[k++] = nums2[j++];
                 }
+                break;
             }
             if (j == nums2Length) {
                 while (i != nums1Length) {
                     merge[k++] = nums1[i++];
                 }
+                break;
             }
             if (nums1[i] > nums2[j]) {
                 merge[k++] = nums2[j++];
